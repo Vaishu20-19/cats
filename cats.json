@@ -1,0 +1,56 @@
+[
+    {
+        "id": "aege",
+        "name": "Aegean",
+        "temperament": "Affectionate, Social, Intelligent, Playful, Active",
+        "origin": "Greece",
+        "description": "Native to the Greek islands known as the Cyclades in the Aegean Sea, these are natural cats, meaning they developed without humans getting involved in their breeding.",
+        "life_span": "9-12",
+        "url": "https://cdn2.thecatapi.com/images/ozEvzdVM-.jpg"
+    },
+    {
+        "id": "beng",
+        "name": "Bengal",
+        "temperament": "Alert, Agile, Energetic, Demanding, Intelligent",
+        "origin": "United States",
+        "description": "The Bengal cat is highly active and highly intelligent. This makes them fun to live with, but they can sometimes be challenging.",
+        "life_span": "12-16",
+        "url": "https://cdn2.thecatapi.com/images/IFXsxmXLm.jpg"
+    },
+    {
+        "id": "siam",
+        "name": "Siamese",
+        "temperament": "Affectionate, Social, Intelligent, Playful",
+        "origin": "Thailand",
+        "description": "Siamese cats are known for their striking blue eyes and elegant bodies. They are social and talkative, forming strong bonds with their owners.",
+        "life_span": "12-15",
+        "url": "https://cdn2.thecatapi.com/images/KCJeb66J2.jpg"
+    },
+    {
+        "id": "maine",
+        "name": "Maine Coon",
+        "temperament": "Gentle, Affectionate, Intelligent, Playful",
+        "origin": "United States",
+        "description": "Maine Coons are one of the largest domesticated cat breeds. They are known for their gentle nature and fluffy appearance.",
+        "life_span": "10-13",
+        "url": "https://cdn2.thecatapi.com/images/0XYvRd7oD.jpg"
+    },
+    {
+        "id": "sphy",
+        "name": "Sphynx",
+        "temperament": "Curious, Playful, Friendly, Intelligent",
+        "origin": "Canada",
+        "description": "The Sphynx is known for its hairlessness, though some have a fine down. They are friendly and inquisitive.",
+        "life_span": "8-14",
+        "url": "https://cdn2.thecatapi.com/images/cIFwPWy84.jpg"
+    },
+    {
+        "id": "ragd",
+        "name": "Ragdoll",
+        "temperament": "Affectionate, Gentle, Intelligent, Relaxed",
+        "origin": "United States",
+        "description": "Ragdolls are large, affectionate cats known for their calm demeanor and tendency to go limp when picked up.",
+        "life_span": "12-17",
+        "url": "https://cdn2.thecatapi.com/images/nK0RaZbq3.jpg"
+    }
+]

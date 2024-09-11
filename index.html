@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cat Breeds</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            .cat-grid {
+    display: flex;
+    flex-wrap: nowrap; /* Disable wrapping */
+    gap: 20px;
+    overflow-x: auto; /* Add horizontal scrolling if cards overflow */
+}
+
+        .cat-card {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 300px; /* Adjust width as needed */
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            box-sizing: border-box;
+            flex-shrink: 0; /* Prevent shrinking of cards */
+        }
+
+        .cat-grid::-webkit-scrollbar {
+            height: 8px; /* Customize scrollbar appearance */
+        }
+
+        .cat-grid::-webkit-scrollbar-thumb {
+            background-color: #888;
+            border-radius: 10px;
+        }
+
+        .cat-grid::-webkit-scrollbar-thumb:hover {
+            background-color: #555;
+        }
+
+        }
+        .container {
+            width: 80%;
+            margin: 20px auto;
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .cat-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: space-between;
+        }
+        .cat-card {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: calc(33% - 10px);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            box-sizing: border-box;
+        }
+        .cat-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        .cat-content {
+            padding: 15px;
+        }
+        .cat-name {
+            font-size: 1.5em;
+            margin: 0;
+        }
+        .cat-origin, .cat-temperament {
+            margin-top: 5px;
+            color: #555;
+        }
+        .cat-description {
+            margin-top: 10px;
+            font-size: 0.9em;
+        }
+        .cat-life {
+            margin-top: 10px;
+            font-weight: bold;
+        }
+        @media (max-width: 768px) {
+            .cat-card {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Cat Breeds</h1>
+        <div class="cat-grid" id="cat-container">
+            <!-- Cat cards will be injected here -->
+        </div>
+    </div>
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const catContainer = document.getElementById('cat-container');
+
+        // Fetch data from cats.json
+        fetch('cats.json')
+            .then(response => response.json())
+            .then(cats => {
+                cats.forEach(cat => {
+                    const card = document.createElement('div');
+                    card.className = 'cat-card';
+
+                    // Add image from cat data
+                    const img = document.createElement('img');
+                    img.src = cat.url;  
+                    img.alt = cat.name;  
+                    card.appendChild(img);
+
+                    // Cat content
+                    const content = document.createElement('div');
+                    content.className = 'cat-content';
+
+                    const name = document.createElement('h2');
+                    name.className = 'cat-name';
+                    name.textContent = cat.name;
+
+                    const origin = document.createElement('p');
+                    origin.className = 'cat-origin';
+                    origin.textContent = 'Origin: ' + cat.origin;
+
+                    const temperament = document.createElement('p');
+                    temperament.className = 'cat-temperament';
+                    temperament.textContent = 'Temperament: ' + cat.temperament;
+
+                    const description = document.createElement('p');
+                    description.className = 'cat-description';
+                    description.textContent = cat.description;
+
+                    const lifeSpan = document.createElement('p');
+                    lifeSpan.className = 'cat-life';
+                    lifeSpan.textContent = 'Life Span: ' + cat.life_span + ' years';
+
+                    content.appendChild(name);
+                    content.appendChild(origin);
+                    content.appendChild(temperament);
+                    content.appendChild(description);
+                    content.appendChild(lifeSpan);
+
+                    card.appendChild(content);
+                    catContainer.appendChild(card);
+                });
+            })
+            .catch(error => {
+                console.error('Error fetching cat data:', error);
+            });
+    });
+    </script>
+</body>
+</html>
